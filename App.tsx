@@ -19,6 +19,7 @@ const arbitrageInceptionImg = '/images/arbitrageinception.jpg';
 const countPepeImg = '/images/countpepe.jpg';
 const truthStreamRaiderImg = '/images/truthstreamraider.jpg';
 const goldClickerImg = '/images/goldclicker.jpg';
+const dogaiImg = '/images/dogai.jpg';
 const intrusiveImg = '/images/intrusive.jpg';
 const benikoGoImg = '/images/benikogo.jpg';
 const dogaiRaiderImg = '/images/dogairaider.jpg';
@@ -32,10 +33,16 @@ const weedcoinImg = '/images/weedcoin.jpg';
 const caderaImg = '/images/cadera.jpg';
 const flyaiImg = '/images/flyai.jpg';
 
+// Business Developer images
+const victusGlobalImg = '/images/victus-global.jpg';
+const bitnuixImg = '/images/bitnuix.jpg';
+const melvartAiImg = '/images/melvart-ai.jpg';
+const kanaLabsImg = '/images/kana-labs.jpg';
+
 export interface WorkItem {
   id: string;
   title: string;
-  category: 'general' | 'website' | 'moderator' | 'raider';
+  category: 'general' | 'website' | 'moderator' | 'raider' | 'business';
   description: string;
   image: string;
   link?: string;
@@ -81,7 +88,7 @@ const initialWorks: WorkItem[] = [
   },
   {
     id: '6',
-    title: 'Celdata - AI Platform (Launching Soon)',
+    title: 'Caderaaa - AI Platform (Launching Soon)',
     category: 'website',
     description: 'Cutting-edge AI platform with innovative features',
     image: caderaImg,
@@ -172,9 +179,9 @@ const initialWorks: WorkItem[] = [
   },
   {
     id: '15',
-    title: 'Panda Official Community - Moderator',
+    title: 'Oken Official Community - Moderator',
     category: 'moderator',
-    description: 'Moderator for Panda group with 80+ members',
+    description: 'Moderator for Oken group with 80+ members',
     image: okenImg,
     date: '2025-01',
   },
@@ -243,6 +250,14 @@ const initialWorks: WorkItem[] = [
     date: '2024-08',
   },
   {
+    id: '21',
+    title: 'DogAI - AI Platform (Launching Soon)',
+    category: 'raider',
+    description: 'Advanced AI platform for dog-related applications',
+    image: dogaiImg,
+    date: '2025-01',
+  },
+  {
     id: '22',
     title: 'Intrusive - Web3 Platform',
     category: 'raider',
@@ -273,6 +288,38 @@ const initialWorks: WorkItem[] = [
     description: 'Web3 platform with unique features and modern design',
     image: bitMartImg,
     date: '2024-09',
+  },
+  {
+    id: '31',
+    title: 'Victus Global - Business Development',
+    category: 'business',
+    description: 'Made quality partnerships',
+    image: victusGlobalImg,
+    date: '2025-01',
+  },
+  {
+    id: '32',
+    title: 'Bitnuix - Business Development',
+    category: 'business',
+    description: 'Made quality partnerships',
+    image: bitnuixImg,
+    date: '2025-01',
+  },
+  {
+    id: '33',
+    title: 'Melvart AI - Business Development',
+    category: 'business',
+    description: 'Made quality partnerships',
+    image: melvartAiImg,
+    date: '2025-01',
+  },
+  {
+    id: '34',
+    title: 'Kana Labs - Business Development',
+    category: 'business',
+    description: 'Made quality partnerships',
+    image: kanaLabsImg,
+    date: '2025-01',
   },
 ];
 
