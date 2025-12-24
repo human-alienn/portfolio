@@ -12,7 +12,7 @@ interface ProofOfWorkProps {
 
 export function ProofOfWork({ works, onAddWork, onDeleteWork }: ProofOfWorkProps) {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-  const [filter, setFilter] = useState<'all' | 'general' | 'website' | 'moderator' | 'raider'>('all');
+  const [filter, setFilter] = useState<'all' | 'general' | 'website' | 'moderator' | 'raider' | 'business'>('all');
 
   const filteredWorks = works.filter(work => {
     if (filter === 'all') return true;
@@ -23,6 +23,7 @@ export function ProofOfWork({ works, onAddWork, onDeleteWork }: ProofOfWorkProps
   const websiteCount = works.filter(w => w.category === 'website').length;
   const moderatorCount = works.filter(w => w.category === 'moderator').length;
   const raiderCount = works.filter(w => w.category === 'raider').length;
+  const businessCount = works.filter(w => w.category === 'business').length;
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
@@ -100,6 +101,19 @@ export function ProofOfWork({ works, onAddWork, onDeleteWork }: ProofOfWorkProps
             </h2>
           </div>
         </div>
+
+        <div className="group relative bg-white/70 backdrop-blur-sm rounded-3xl p-8 border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-teal-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="relative z-10">
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-gray-600">Business Developer</p>
+              <Sparkles className="w-6 h-6 text-emerald-500 animate-pulse" />
+            </div>
+            <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+              {businessCount}
+            </h2>
+          </div>
+        </div>
       </div>
 
       {/* Filter and Add Button */}
@@ -172,6 +186,20 @@ export function ProofOfWork({ works, onAddWork, onDeleteWork }: ProofOfWorkProps
             Raider/Shiller
             {filter === 'raider' && (
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-red-500 to-rose-500 blur opacity-50 -z-10"></div>
+            )}
+          </button>
+
+          <button
+            onClick={() => setFilter('business')}
+            className={`relative px-8 py-3 rounded-2xl transition-all duration-300 transform hover:scale-105 ${
+              filter === 'business'
+                ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg shadow-green-500/50'
+                : 'bg-white/60 text-gray-700 hover:bg-white/80'
+            }`}
+          >
+            Business Developer
+            {filter === 'business' && (
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-500 to-blue-500 blur opacity-50 -z-10"></div>
             )}
           </button>
         </div>
